@@ -23,7 +23,7 @@ router.post('/up', function(req, res, next) {
     if (err) throw err;
 
     console.log('Someone voted up');
-    res.send('OK');
+    res.send(200);
   });
 });
 
@@ -32,7 +32,7 @@ router.post('/down', function(req, res, next) {
     if (err) throw err;
 
     console.log('Someone voted down');
-    res.send('OK');
+    res.send(200);
   });
 });
 
