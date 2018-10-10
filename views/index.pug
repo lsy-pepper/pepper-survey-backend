@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(method='POST' action='/survey/up')
+    button(type='submit') Up
+
+  form(method='POST' action='/survey/down')
+    button(type='submit') Down
