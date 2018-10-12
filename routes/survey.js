@@ -26,7 +26,7 @@ router.get('/', function(req, res, next){
 
 router.delete('/', function(req, res, next){
   client.set(voteKey, null);
-});)
+});
 
 router.post('/up', function(req, res, next) {
   client.get(voteKey, function (err, reply) {
