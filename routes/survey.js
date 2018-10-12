@@ -24,7 +24,7 @@ router.get('/', function(req, res, next){
   });
 });
 
-router.delete('/', function(req, res, next){
+router.delete('/reset', function(req, res, next){
   client.set(voteKey, null);
 });
 
