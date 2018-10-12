@@ -10,7 +10,7 @@ var voteKey = "vote";
 router.get('/', function(req, res, next){
   client.get(voteKey, function (err, reply) {
     if(err) throw err;
-    if(data != null){
+    if(reply != null){
       data = reply.toString()
       var contents = data.split('');
     }else{
@@ -22,7 +22,11 @@ router.get('/', function(req, res, next){
 
     res.render('survey', { up: countUp, down: countDown });
   });
-})
+});
+
+router.delete('/', function(req, res, next){
+  client.set(voteKey, null);
+});)
 
 router.post('/up', function(req, res, next) {
   client.get(voteKey, function (err, reply) {
