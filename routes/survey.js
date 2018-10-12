@@ -17,8 +17,8 @@ router.get('/', function(req, res, next){
       contents = [];
     }
 
-      var countUp = contents.filter(function(x){return x=='+'}).length;
-      var countDown = contents.filter(function(x){return x=='-'}).length;
+    var countUp = contents.filter(function(x){return x=='+'}).length;
+    var countDown = contents.filter(function(x){return x=='-'}).length;
 
     res.render('survey', { up: countUp, down: countDown });
   });
@@ -26,6 +26,7 @@ router.get('/', function(req, res, next){
 
 router.post('/reset', function(req, res, next){
   client.set(voteKey, null);
+  res.sendStatus(200);
 });
 
 router.post('/up', function(req, res, next) {
