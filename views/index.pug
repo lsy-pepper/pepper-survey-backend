@@ -1,17 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
 
   form(method='POST' action='/survey/up')
-    button(type='submit') Up
+    button.btn.btn-success(type='submit') Up
 
   form(method='POST' action='/survey/down')
-    button(type='submit') Down
+    button.btn.btn-danger(type='submit') Down
 
   form(method='GET' action='/survey')
-    button(type='submit') Results
+    button.btn.btn-info(type='submit') Results
 
   form(method='POST' action='/survey/reset')
-    button(type='submit') Reset
+    button.btn.btn-warning(type='submit') Reset

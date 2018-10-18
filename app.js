@@ -3,7 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var methodOverride = require('method-override')
+var sassMiddleware = require('node-sass-middleware');
+var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var surveyRouter = require('./routes/survey');
@@ -18,6 +19,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(sassMiddleware({
+    /* Options */
+    src: path.join(__dirname, 'styles'),
+    dest: path.join(__dirname, 'public/stylesheets'),
+    debug: true,
+    prefix: "/stylesheets",
+    outputStyle: 'compressed'
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Method override

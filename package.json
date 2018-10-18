@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "local": "Set REDISCLOUD_URL=redis://192.168.99.100:6379 && node ./bin/www",
+    "local": "Set REDISCLOUD_URL=redis://localhost:6379 && node ./bin/www",
     "nodemon-local": "nodemon --exec npm run local"
   },
   "dependencies": {
+    "bootstrap": "^4.1.3",
     "cookie-parser": "~1.4.3",
     "dateformat": "^3.0.3",
     "debug": "~2.6.9",
@@ -15,7 +16,9 @@
     "http-errors": "~1.6.2",
     "method-override": "^3.0.0",
     "morgan": "~1.9.0",
+    "node-sass-middleware": "^0.11.0",
     "pug": "2.0.0-beta11",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "sass": "^1.14.3"
   }
 }
