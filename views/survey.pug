@@ -4,8 +4,24 @@ block content
   h3  Results
   table(style='width:25%', border='1')
     tr
+      th Name
       th Upvotes
       th Downvotes
-    tr
-      td #{up}
-      td #{down}
+      th Reset
+      th Delete
+    each row in votes
+      tr
+        td
+          form(method='POST' action='/survey/name/' + row.key)
+            input(type='text', placeholder='Name' name='name' value=row.name)
+            button(type='submit') Rename
+        td #{row.up}
+        td #{row.down}
+        td
+          form(method='POST' action='/survey/reset/' + row.key)
+            button(type='submit') Reset
+        td
+          form(method='POST' action='/survey/' + row.key + '?_method=DELETE')
+            button(type='submit') Delete
+    else
+      p Sorry, there is no Data
