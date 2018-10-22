@@ -83,12 +83,12 @@ router.post('/up', function(req, res, next) {
     reply = reply || "";
     client.hset(voteKey, KEY_VOTE_VALUE, reply.toString()+"+");
     console.log('Someone voted up');
-    if(req.xhr){
+    //if(req.xhr){
       res.sendStatus(200);
-    }
-    else {
-      res.redirect('/')
-    }
+    //}
+    //else {
+    //  res.redirect('/')
+    //}
   });
 });
 
@@ -99,12 +99,12 @@ router.post('/down', function(req, res, next) {
     reply = reply || "";
     client.hset(voteKey, KEY_VOTE_VALUE, reply.toString()+"-");
     console.log('Someone voted down');
-    if(req.xhr){
+    //if(req.xhr){
       res.sendStatus(200);
-    }
-    else {
-      res.redirect('/')
-    }
+    //}
+    //else {
+    //  res.redirect('/')
+    //}
   });
 });
 
